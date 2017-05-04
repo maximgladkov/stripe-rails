@@ -55,7 +55,7 @@ environment file directly.
 
     initializer 'stripe.javascript_helper' do
       ActiveSupport.on_load :action_controller do
-        helper Stripe::JavascriptHelper
+        ::ActionController::Base.send(:include, Stripe::JavascriptHelper)
       end
     end
 
